@@ -1,0 +1,188 @@
+/* --- Cosmic Galaxy Evolution --- */
+.cosmic-galaxy-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, #1a0b2e 0%, #050505 100%);
+    z-index: -2;
+    overflow: hidden;
+}
+
+.cosmic-galaxy-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(1px 1px at 20px 30px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 40px 70px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 90vw 40vh, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 15vw 10vh, #eee, rgba(0, 0, 0, 0));
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    opacity: 0.3;
+    animation: twinkleCosmic 4s infinite alternate;
+}
+
+@keyframes twinkleCosmic {
+    0% {
+        opacity: 0.2;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0.5;
+        transform: scale(1.1);
+    }
+}
+
+.achievement-page.cosmic-mode {
+    --primary: #9c27b0 !important;
+    --primary-light: #e1bee7 !important;
+    --primary-glow: rgba(156, 39, 176, 0.4) !important;
+    --flame-grad: linear-gradient(135deg, #6200ea, #9c27b0) !important;
+}
+
+.cosmic-mode .heat-title {
+    text-shadow: 0 0 20px #9c27b0, 0 0 40px #6200ea;
+}
+
+.cosmic-mode .burning-flame-svg {
+    filter: drop-shadow(0 0 50px #9c27b0);
+}
+
+.cosmic-mode .flame-percent-text {
+    text-shadow: 0 0 30px #9c27b0;
+}
+
+/* Rank Grid Enhancement in Achievements */
+.hall-of-flame-section {
+    margin-top: 80px;
+    padding: 60px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+}
+
+.rank-grid-mini {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.rank-card-mini {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.rank-card-mini.unlocked {
+    border-color: #9c27b0;
+    /* Cosmic purple for unlocked items in future or primary */
+    background: linear-gradient(145deg, rgba(255, 78, 0, 0.05), rgba(0, 0, 0, 0.5));
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.rank-card-mini.unlocked i {
+    color: #ff4e00;
+    /* Fallback to theme primary */
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 15px rgba(255, 78, 0, 0.4));
+}
+
+.cosmic-mode .rank-card-mini.unlocked {
+    border-color: var(--primary);
+    background: linear-gradient(145deg, rgba(156, 39, 176, 0.1), rgba(0, 0, 0, 0.6));
+}
+
+.cosmic-mode .rank-card-mini.unlocked i {
+    color: var(--primary);
+    filter: drop-shadow(0 0 15px var(--primary-glow));
+}
+
+.rank-card-mini:hover:not(.locked) {
+    transform: translateY(-8px) scale(1.05);
+    border-color: var(--primary);
+}
+
+.rank-card-mini i {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.rank-card-mini h5 {
+    margin: 8px 0 4px 0;
+    font-size: 1rem;
+    font-weight: 850;
+    color: #fff;
+}
+
+.rank-card-mini span {
+    font-size: 0.8rem;
+    color: #777;
+}
+
+/* Voucher Checkout Styles */
+.promo-section input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Cosmic Ring Flame Animation */
+/* Cosmic Ring Flame Animation - Mature Void */
+.cosmic-ring-flame {
+    position: absolute;
+    inset: -20px;
+    border-radius: 50%;
+    /* Electric Violet to transparent - matching the ring stroke #b388ff */
+    background: radial-gradient(circle, rgba(179, 136, 255, 0.5) 0%, transparent 70%);
+    animation: pulseRing 3s infinite ease-in-out;
+    filter: blur(20px);
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+@keyframes pulseRing {
+    0% {
+        transform: scale(0.9);
+        opacity: 0.5;
+        box-shadow: 0 0 20px rgba(179, 136, 255, 0.2);
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.9;
+        box-shadow: 0 0 50px rgba(179, 136, 255, 0.5);
+    }
+
+    100% {
+        transform: scale(0.9);
+        opacity: 0.5;
+        box-shadow: 0 0 20px rgba(179, 136, 255, 0.2);
+    }
+}
+
+@keyframes cosmicSpin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.cosmic-outer-burn {
+    box-shadow: 0 0 100px rgba(156, 39, 176, 0.4), inset 0 0 50px rgba(156, 39, 176, 0.2);
+}

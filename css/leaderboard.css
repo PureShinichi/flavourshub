@@ -1,0 +1,208 @@
+:root {
+    --primary: #ff6b35;
+    --bg: #121212;
+    --card: #1e1e1e;
+    --text: #f5f5f5;
+    --gold: #ffd700;
+    --silver: #c0c0c0;
+    --bronze: #cd7f32;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+.back-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 15px;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+}
+
+.leaderboard-container {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.title {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    background: linear-gradient(45deg, #ff6b35, #ff9f43);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    color: #777;
+    margin-bottom: 40px;
+}
+
+.podium {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 50px;
+}
+
+.podium-place {
+    background: var(--card);
+    border-radius: 15px 15px 0 0;
+    padding: 20px;
+    width: 30%;
+    position: relative;
+    border-top: 4px solid transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.podium-place.gold {
+    height: 220px;
+    border-color: var(--gold);
+    background: linear-gradient(to bottom, #2a2a2a, #1e1e1e);
+    z-index: 2;
+    transform: scale(1.1);
+}
+
+.podium-place.silver {
+    height: 180px;
+    border-color: var(--silver);
+}
+
+.podium-place.bronze {
+    height: 160px;
+    border-color: var(--bronze);
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    background: #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.2rem;
+    margin: 10px 0;
+    border: 2px solid #555;
+}
+
+.gold .avatar {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: rgba(255, 215, 0, 0.1);
+}
+
+.crown {
+    position: absolute;
+    top: -25px;
+    color: var(--gold);
+    font-size: 2rem;
+    animation: float 2s infinite ease-in-out;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0)
+    }
+
+    50% {
+        transform: translateY(-5px)
+    }
+}
+
+.podium-place h3 {
+    margin: 5px 0;
+    font-size: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+}
+
+.podium-place p {
+    font-weight: 800;
+    color: var(--primary);
+    margin: 0;
+}
+
+.badge {
+    font-size: 0.7rem;
+    color: #999;
+    margin-top: 5px;
+    display: block;
+}
+
+.list-view {
+    background: var(--card);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.list-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #333;
+    transition: 0.2s;
+}
+
+.list-item:last-child {
+    border: none;
+}
+
+.list-item:hover {
+    background: #252525;
+}
+
+.list-item.me {
+    background: rgba(255, 107, 53, 0.15);
+    border-left: 3px solid var(--primary);
+}
+
+.rank {
+    width: 40px;
+    font-weight: 800;
+    color: #555;
+    font-size: 1.1rem;
+}
+
+.info {
+    flex: 1;
+    text-align: left;
+}
+
+.info h4 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.info small {
+    color: #777;
+    font-size: 0.8rem;
+}
+
+.points {
+    font-weight: 700;
+    color: var(--primary);
+}
